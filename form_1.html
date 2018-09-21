@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="static/img/ace_favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">	<meta name="description" content="">
-    <title>ACE婚介所 @叮咚的雨</title>
+    <title>ACE婚介所 @ACE</title>
 
 </head>
 <!-- Bootstrap core CSS -->
@@ -14,7 +14,7 @@
 <div class="container">
     <header class="masthead">
         <h1 class="text-muted">ACE婚介所</h1>
-        <h6 class="text-muted"><a href="https://github.com/Louis-He">@叮咚的雨</a></h6>
+        <!-- <h6 class="text-muted"><a href="https://github.com/Louis-He">@叮咚的雨</a></h6> -->
         <!-- <h6 class="text-muted"><font color=#000000 size=3><strong>*注意：本站数据自动更新，未经过审核.</strong></font></h6> -->
     </header>
     <hr>
@@ -59,6 +59,14 @@
                 <input type="text" class="form-control" id="weight" placeholder="Weight">
             </div>
 
+            <div class="form-group">
+                <label for="gender">生理性别</label>
+                <select id="gender" class="form-control">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </div>
+
             <div class="row">
                 <div class="col-sm">
                     <label for="constellation">星座</label>
@@ -91,7 +99,26 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">下一步</button>
+            <div class="form-group">
+                <label for="sexInterest">性取向</label>
+                <select id="sexInterest" class="form-control">
+                    <option>男性</option>
+                    <option>女性</option>
+                    <option>男女通吃 </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="wecharID">微信号</label>
+                <input type="text" class="form-control" id="wecharID" placeholder="WeChat ID">
+            </div>
+
+            <div class="form-group">
+                <label for="email">校园Email</label>
+                <input type="text" class="form-control" id="email" placeholder="email">
+            </div>
+
+            <button class="btn btn-primary">下一步</button>
         </form>
         <br>
     </div>
@@ -99,7 +126,7 @@
 
     <!-- Site footer -->
     <footer class="footer">
-        <p>&copy; ACE婚介所 2018 <a href="https://github.com/Louis-He">@叮咚的雨</a> <br>提交的数据将不会被公布</p>
+        <p>&copy; ACE婚介所 2018 <a href="https://github.com/Louis-He">@ACE </a> <br>*我们保证您提交的数据将仅被用于计算，不会以任何方式公布。</p>
     </footer>
 </div>
 </body>
