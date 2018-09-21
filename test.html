@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- Bootstrap core CSS -->
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/external.css" rel="stylesheet">
+<body>
+    <form>
+        <div id="part1">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="firstName">名</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="FirstName">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="LastName">姓</label>
+                        <input type="text" class="form-control" id="LastName" placeholder="LastName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="button" value="hide1" id="btn1" onclick="hide1()">
+        <div id="part2">PART2</div>
+        <input type="button" value="hide2" id="btn2" onclick="hide2()">
+    </form>
+</body>
+<script src="static/js/jquery-3.3.1.js"></script>
+<script>
+    function hide1() {
+        document.getElementById("part1").style.display="none";
+        document.getElementById("part2").style.display="";
+    }
+    function hide2() {
+        document.getElementById("part1").style.display="";
+        document.getElementById("part2").style.display="none";
+    }
+</script>
+</html>

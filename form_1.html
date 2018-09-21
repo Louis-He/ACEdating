@@ -10,7 +10,7 @@
 <link href="static/css/bootstrap.css" rel="stylesheet">
 <link href="static/css/external.css" rel="stylesheet">
 
-<body onload="load()">
+<body onload="onload()">
 <div class="container">
     <header class="masthead">
         <h1 class="text-muted">ACE婚介所</h1>
@@ -23,111 +23,730 @@
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 1%"></div>
         </div>
+        <br>
         <h6>速配进行中～～ 1%</h6>
     </div>
 
-    <h3>基本个人信息 <span class="badge badge-secondary">必填</span></h3>
-    <div class="container">
-        <form role="form">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="form-group">
-                        <label for="firstName">名</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="FirstName">
+    <form role="form" method="post">
+        <div id="firstPage">
+            <h3>基本个人信息 <span class="badge badge-secondary">必填</span></h3>
+            <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="firstName">名</label>
+                                <input name="firstName" type="text" class="form-control" id="firstName" placeholder="FirstName">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="LastName">姓</label>
+                                <input name="LastName" type="text" class="form-control" id="LastName" placeholder="LastName">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm">
+
                     <div class="form-group">
-                        <label for="LastName">姓</label>
-                        <input type="text" class="form-control" id="LastName" placeholder="LastName">
+                        <label for="engName">英语名</label>
+                        <input name="engName" type="text" class="form-control" id="engName" placeholder="English Name">
                     </div>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label for="engName">英语名</label>
-                <input type="text" class="form-control" id="engName" placeholder="English Name">
-            </div>
-
-            <div class="form-group">
-                <label for="height">身高</label>
-                <input type="text" class="form-control" id="height" placeholder="Height">
-            </div>
-
-            <div class="form-group">
-                <label for="weight">体重</label>
-                <input type="text" class="form-control" id="weight" placeholder="Weight">
-            </div>
-
-            <div class="form-group">
-                <label for="gender">生理性别</label>
-                <select id="gender" class="form-control">
-                    <option>男</option>
-                    <option>女</option>
-                </select>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">
-                    <label for="constellation">星座</label>
-                    <select id="constellation" class="form-control">
-                        <option>白羊(03.21~04.20)</option>
-                        <option>金牛(04.21~05.20)</option>
-                        <option>双子(05.21~06.21)</option>
-                        <option>巨蟹(06.22~07.22)</option>
-                        <option>狮子(07.23~08.22)</option>
-                        <option>处女(08.23~09.22)</option>
-                        <option>天秤(09.23~10.22)</option>
-                        <option>天蝎(10.23~11.21)</option>
-                        <option>射手(11.22~12.21)</option>
-                        <option>摩羯(12.22~01.19)</option>
-                        <option>水瓶(01.20~02.18)</option>
-                        <option>双鱼(02.19~03.20)</option>
-                    </select>
-                </div>
-                <div class="col-sm">
                     <div class="form-group">
-                        <label for="bloodType">血型</label>
-                        <select id="bloodType" class="form-control">
-                            <option>A</option>
-                            <option>B</option>
-                            <option>O</option>
-                            <option>AB</option>
-                            <option>不知道呢╮(╯▽╰)╭</option>
+                        <label for="height">身高</label>
+                        <input name="height" type="text" class="form-control" id="height" placeholder="Height">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">体重</label>
+                        <input name="weight" type="text" class="form-control" id="weight" placeholder="Weight">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">生理性别</label>
+                        <select id="gender" class="form-control">
+                            <option>男</option>
+                            <option>女</option>
                         </select>
                     </div>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label for="sexInterest">性取向</label>
-                <select id="sexInterest" class="form-control">
-                    <option>男性</option>
-                    <option>女性</option>
-                    <option>男女通吃 </option>
-                </select>
-            </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="constellation">星座</label>
+                            <select name="constellation" id="constellation" class="form-control">
+                                <option>白羊(03.21~04.20)</option>
+                                <option>金牛(04.21~05.20)</option>
+                                <option>双子(05.21~06.21)</option>
+                                <option>巨蟹(06.22~07.22)</option>
+                                <option>狮子(07.23~08.22)</option>
+                                <option>处女(08.23~09.22)</option>
+                                <option>天秤(09.23~10.22)</option>
+                                <option>天蝎(10.23~11.21)</option>
+                                <option>射手(11.22~12.21)</option>
+                                <option>摩羯(12.22~01.19)</option>
+                                <option>水瓶(01.20~02.18)</option>
+                                <option>双鱼(02.19~03.20)</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="bloodType">血型</label>
+                                <select name="bloodType" id="bloodType" class="form-control">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>O</option>
+                                    <option>AB</option>
+                                    <option>不知道呢╮(╯▽╰)╭</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <label for="wecharID">微信号</label>
-                <input type="text" class="form-control" id="wecharID" placeholder="WeChat ID">
-            </div>
+                    <div class="form-group">
+                        <label for="sexInterest">性取向</label>
+                        <select name="sexInterest" id="sexInterest" class="form-control">
+                            <option>男性</option>
+                            <option>女性</option>
+                            <option>男女通吃 </option>
+                        </select>
+                    </div>
 
-            <div class="form-group">
-                <label for="email">校园Email</label>
-                <input type="text" class="form-control" id="email" placeholder="email">
-            </div>
+                    <div class="form-group">
+                        <label for="wechatID">微信号</label>
+                        <input name="wechatID" type="text" class="form-control" id="wechatID" placeholder="WeChat ID">
+                    </div>
 
-            <button class="btn btn-primary">下一步</button>
-        </form>
-        <br>
-    </div>
+                    <div class="form-group">
+                        <label for="email">校园Email</label>
+                        <input name="email" type="text" class="form-control" id="email" placeholder="email">
+                    </div>
+
+                <input class="btn btn-primary" type="button" value="下一页" id="btn1" onclick="page1Next()">
+
+                <br>
+            </div>
+        </div>
+
+        <div id="secondPage">
+            <h3>我的个性标签 <span class="badge badge-secondary">Σ(￣。￣ﾉ)ﾉ</span></h3>
+            <div class="container">
+                    <label>我是一个...</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question1" id="optionsRadios11" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>现实主义者</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question1" id="optionsRadios12" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>理想主义者</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question2" id="optionsRadios21" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>外向</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question2" id="optionsRadios22" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>内向</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question3" id="optionsRadios31" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>主动</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question3" id="optionsRadios32" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>被动</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question4" id="optionsRadios41" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>意志不坚定</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question4" id="optionsRadios42" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>意志坚定</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question5" id="optionsRadios51" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>爱外出</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question5" id="optionsRadios52" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>爱宅家</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question6" id="optionsRadios61" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>深思熟虑</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question6" id="optionsRadios62" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>走一步看一步</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question7" id="optionsRadios71" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>安静</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question7" id="optionsRadios72" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>唠叨</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question8" id="optionsRadios81" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>挑剔</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question8" id="optionsRadios82" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>随缘</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>我是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question9" id="optionsRadios91" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>无畏</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question9" id="optionsRadios92" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>胆小</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <input class="btn btn-primary" type="button" value="加油" id="btn2" onclick="page2Next()">
+
+                <br>
+            </div>
+        </div>
+
+        <div id="thirdPage">
+            <h3>我希望另一半... <span class="badge badge-secondary">( ´▽` )ﾉ</span></h3>
+            <div class="container">
+                    <label>TA是一个...</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question11" id="optionsRadios111" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>现实主义者</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question11" id="optionsRadios112" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>理想主义者</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question12" id="optionsRadios121" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>外向</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question12" id="optionsRadios122" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>内向</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question13" id="optionsRadios131" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>主动</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question13" id="optionsRadios132" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>被动</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question14" id="optionsRadios141" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>意志不坚定</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question14" id="optionsRadios142" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>意志坚定</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question15" id="optionsRadios151" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>爱外出</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question15" id="optionsRadios152" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>爱宅家</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question16" id="optionsRadios161" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>深思熟虑</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question16" id="optionsRadios162" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>走一步看一步</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question17" id="optionsRadios171" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>安静</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question17" id="optionsRadios172" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>唠叨</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question18" id="optionsRadios181" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>挑剔</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question18" id="optionsRadios182" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>随缘</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <label>TA是一个...的人</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question19" id="optionsRadios191" value="option1">
+                                    <button type="button" class="btn questionOption" disabled>无畏</button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="question19" id="optionsRadios192" value="option2">
+                                    <button type="button" class="btn questionOption" disabled>胆小</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <input class="btn btn-primary" type="button" value="最后一页！" id="btn3" onclick="page3Next()">
+
+                <br>
+            </div>
+        </div>
+
+        <div id="forthPage">
+            <h3>我会... <span class="badge badge-secondary">^_−☆</span></h3>
+            <div class="container">
+                    <label>1. 你打算跟朋友出去玩，想向另一半交代一声，结果连续拨打对方的手机，都没有响应，你觉得奇怪，也很着急，在要给手机留言时的表现是怎样？</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question21" id="optionsRadios211" value="option1">直接说“我要跟朋友出去玩”
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question21" id="optionsRadios212" value="option2">询问“你在哪里呀”
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question21" id="optionsRadios213" value="option3">语气略为粗暴地留言
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question21" id="optionsRadios214" value="option4">简单地说“听到留言请回电”
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question21" id="optionsRadios215" value="option5">直接挂掉
+                        </label>
+                    </div>
+
+                    <hr>
+
+                    <label>2. 假设你置身一座古老的神秘城堡里，在通道的尽头，你发现一间与众不同的房子，你觉得里面有什么？</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question22" id="optionsRadios221" value="option1">满屋子的金银珠宝
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question22" id="optionsRadios222" value="option2">各种名画古物珍藏品
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question22" id="optionsRadios223" value="option3">隐藏着神秘的魔法
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question22" id="optionsRadios224" value="option4">许多漂亮鞋子和衣服
+                        </label>
+                    </div>
+
+
+                    <hr>
+
+                    <label>3. 假设周末的夜晚你要和情人进行浪漫约会，你会选择以下哪种酒店度过良宵？</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question23" id="optionsRadios231" value="option1">设施齐全的豪华酒店
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question23" id="optionsRadios232" value="option2">远离都市的温泉宾馆
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question23" id="optionsRadios233" value="option3">浪漫暧昧的情人宾馆
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question23" id="optionsRadios234" value="option4">地方特色的休闲酒店
+                        </label>
+                    </div>
+
+
+                    <hr>
+
+                    <label>4. 如果现在的你，能选择艺术当工作，你的选择会是</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question24" id="optionsRadios241" value="option1">画家
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question24" id="optionsRadios242" value="option2">摄影家
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question24" id="optionsRadios243" value="option3">雕刻家
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question24" id="optionsRadios244" value="option4">作家
+                        </label>
+                    </div>
+
+
+                    <hr>
+
+                    <label>5. 填写这张表单是因为...?</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question25" id="optionsRadios251" value="option1">怕一个人孤身在外无人陪同
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question25" id="optionsRadios252" value="option2">只是想玩一玩
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="question25" id="optionsRadios253" value="option3">认认真真让我谈一场恋爱吧
+                        </label>
+                    </div>
+
+                    <hr>
+
+                <button type="submit" class="btn btn-primary" onclick="getInfo()">提交</button>
+
+                <br>
+            </div>
+        </div>
+    </form>
 
 
     <!-- Site footer -->
     <footer class="footer">
         <p>&copy; ACE婚介所 2018 <a href="https://github.com/Louis-He">@ACE </a> <br>*我们保证您提交的数据将仅被用于计算，不会以任何方式公布。</p>
     </footer>
+
+    <!-- javascript -->
+    <script src="static/js/jquery-3.3.1.js"></script>
+    <script>
+        function firstRadio(){
+            $(':radio').click(function(){
+                var value = $(this).val();  //获取选中的radio的值
+                console.log(value);
+            });
+        }
+
+
+        function onload() {
+            document.getElementById("firstPage").style.display="";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="none";
+            $(':radio').click(function(){
+                var value = $(this.val());  //获取选中的radio的值
+                console.log($(this));
+            });
+        }
+
+        function page1Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="none";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function page2Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="";
+            document.getElementById("forthPage").style.display="none";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function page3Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function getInfo(){
+            var formId = document.getElementById("form");
+            console.log(formId);
+        }
+
+
+
+    </script>
 </div>
 </body>
 </html>

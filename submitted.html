@@ -1,0 +1,99 @@
+<!DOCTYPE html><html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/img/ace_favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	<meta name="description" content="">
+    <title>ACE婚介所 @ACE</title>
+
+</head>
+<!-- Bootstrap core CSS -->
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/external.css" rel="stylesheet">
+
+<body onload="onload()">
+<div class="container">
+    <header class="masthead">
+        <h1 class="text-muted">ACE婚介所</h1>
+        <!-- <h6 class="text-muted"><a href="https://github.com/Louis-He">@叮咚的雨</a></h6> -->
+        <!-- <h6 class="text-muted"><font color=#000000 size=3><strong>*注意：本站数据自动更新，未经过审核.</strong></font></h6> -->
+    </header>
+    <hr>
+
+    <div class="progress-bar-component">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+        <br>
+        <h6>已经提交100%</h6>
+    </div>
+
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+             您的表单已经成功提交。
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; ACE婚介所 2018 <a href="https://github.com/Louis-He">@ACE </a> <br>*我们保证您提交的数据将仅被用于计算，不会以任何方式公布。</p>
+    </footer>
+
+    <!-- javascript -->
+    <script src="static/js/jquery-3.3.1.js"></script>
+    <script>
+        function firstRadio(){
+            $(':radio').click(function(){
+                var value = $(this).val();  //获取选中的radio的值
+                console.log(value);
+            });
+        }
+
+
+        function onload() {
+            document.getElementById("firstPage").style.display="";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="none";
+            $(':radio').click(function(){
+                var value = $(this.val());  //获取选中的radio的值
+                console.log($(this));
+            });
+        }
+
+        function page1Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="none";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function page2Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="";
+            document.getElementById("forthPage").style.display="none";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function page3Next(){
+            document.getElementById("firstPage").style.display="none";
+            document.getElementById("secondPage").style.display="none";
+            document.getElementById("thirdPage").style.display="none";
+            document.getElementById("forthPage").style.display="";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
+        function getInfo(){
+            var formId = document.getElementById("form");
+            console.log(formId);
+        }
+
+
+
+    </script>
+</div>
+</body>
+</html>
