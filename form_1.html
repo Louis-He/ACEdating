@@ -27,7 +27,7 @@
         <h6>速配进行中～～ 1%</h6>
     </div>
 
-    <form role="form" method="post">
+    <form id="form" role="form" method="post">
         <div id="firstPage">
             <h3>基本个人信息 <span class="badge badge-secondary">必填</span></h3>
             <div class="container">
@@ -37,12 +37,18 @@
                             <div class="form-group">
                                 <label for="firstName">名</label>
                                 <input name="firstName" type="text" class="form-control" id="firstName" placeholder="FirstName">
+                                <div class="invalid-feedback">
+                                    请填写名
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
-                                <label for="LastName">姓</label>
-                                <input name="LastName" type="text" class="form-control" id="LastName" placeholder="LastName">
+                                <label for="lastName">姓</label>
+                                <input name="lastName" type="text" class="form-control" id="lastName" placeholder="LastName">
+                                <div class="invalid-feedback">
+                                    请填写姓
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,12 +60,12 @@
 
                     <div class="form-group">
                         <label for="height">身高</label>
-                        <input name="height" type="text" class="form-control" id="height" placeholder="Height">
+                        <input name="height" type="text" onkeyup="value=value.replace(/[^\d\.]/g,'')" class="form-control" id="height" placeholder="Height(Only number)">
                     </div>
 
                     <div class="form-group">
                         <label for="weight">体重</label>
-                        <input name="weight" type="text" class="form-control" id="weight" placeholder="Weight">
+                        <input name="weight" type="text" onkeyup="value=value.replace(/[^\d\.]/g,'')" class="form-control" id="weight" placeholder="Weight">
                     </div>
 
                     <div class="form-group">
@@ -121,8 +127,28 @@
                         <input name="email" type="text" class="form-control" id="email" placeholder="email">
                     </div>
 
-                <input class="btn btn-primary" type="button" value="下一页" id="btn1" onclick="page1Next()">
+                    <input class="btn btn-primary" type="button" value="下一页" id="btn1" onclick="checkInput1()">
 
+                    <!-- Modal -->
+                    <div class="modal fade" id="nobackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title warning-title" id="exampleModalLabel">警告</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    为了真实反应您的第一反应，所有页面提交后都不能再返回修改。
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">返回编辑</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="checkInput1()">我知道了，继续！</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <br>
             </div>
         </div>
@@ -695,14 +721,36 @@
 
     <!-- javascript -->
     <script src="static/js/jquery-3.3.1.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/checkInput.js"></script>
     <script>
+        var warning = false;
+        function checkInput1(){
+            var is_passed = true;
+
+            if (isBlank(form.firstName.value)){
+                document.getElementById("firstName").setAttribute('class', "form-control is-invalid");
+                is_passed = false;
+            }else{
+                document.getElementById("firstName").setAttribute('class', "form-control");
+            }
+
+            if (isBlank(form.lastName.value)){
+                document.getElementById("lastName").setAttribute('class', "form-control is-invalid");
+                is_passed = false;
+            }else{
+                document.getElementById("lastName").setAttribute('class', "form-control");
+            }
+
+
+        }
+
         function firstRadio(){
             $(':radio').click(function(){
                 var value = $(this).val();  //获取选中的radio的值
                 console.log(value);
             });
         }
-
 
         function onload() {
             document.getElementById("firstPage").style.display="";
@@ -716,11 +764,19 @@
         }
 
         function page1Next(){
-            document.getElementById("firstPage").style.display="none";
-            document.getElementById("secondPage").style.display="";
-            document.getElementById("thirdPage").style.display="none";
-            document.getElementById("forthPage").style.display="none";
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            if(!warning){
+                warning = true;
+                $('#nobackModal').modal({
+                    show: true
+                });
+            }else{
+                document.getElementById("firstPage").style.display="none";
+                document.getElementById("secondPage").style.display="";
+                document.getElementById("thirdPage").style.display="none";
+                document.getElementById("forthPage").style.display="none";
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+
         }
 
         function page2Next(){

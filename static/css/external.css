@@ -38,3 +38,7 @@ fieldset[disabled] .questionOption.active {
     color: #FF0088;
     background-color: #ffffff;
 }
+
+.warning-title {
+    color: red;
+}
