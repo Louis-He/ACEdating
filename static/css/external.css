@@ -1,0 +1,40 @@
+.masthead{
+    margin: 10px;
+}
+.progress-bar-component{
+    align-content: center;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.questionOption {
+    color: #ffffff;
+    background-color: #FF0088;
+    border-color: #FFFFFF;
+}
+
+.questionOption.disabled,
+.questionOption[disabled],
+fieldset[disabled] .questionOption,
+.questionOption.disabled:hover,
+.questionOption[disabled]:hover,
+fieldset[disabled] .questionOption:hover,
+.questionOption.disabled:focus,
+.questionOption[disabled]:focus,
+fieldset[disabled] .questionOption:focus,
+.questionOption.disabled:active,
+.questionOption[disabled]:active,
+fieldset[disabled] .questionOption:active,
+.questionOption.disabled.active,
+.questionOption[disabled].active,
+fieldset[disabled] .questionOption.active {
+    background-color: #FF0088;
+    border-color: #FFFFFF;
+}
+
+.questionOption .badge {
+    color: #FF0088;
+    background-color: #ffffff;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html><html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/img/ace_favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	<meta name="description" content="">
+    <title>ACE婚介所 @叮咚的雨</title>
+
+</head>
+<!-- Bootstrap core CSS -->
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/external.css" rel="stylesheet">
+
+<body onload="load()">
+<div class="container">
+    <header class="masthead">
+        <h1 class="text-muted">ACE婚介所</h1>
+        <h6 class="text-muted"><a href="https://github.com/Louis-He">@叮咚的雨</a></h6>
+        <!-- <h6 class="text-muted"><font color=#000000 size=3><strong>*注意：本站数据自动更新，未经过审核.</strong></font></h6> -->
+    </header>
+    <hr>
+
+    <div class="progress-bar-component">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 1%"></div>
+        </div>
+        <h6>速配进行中～～ 1%</h6>
+    </div>
+
+    <h3>基本个人信息 <span class="badge badge-secondary">必填</span></h3>
+    <div class="container">
+        <form role="form">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="firstName">名</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="FirstName">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="LastName">姓</label>
+                        <input type="text" class="form-control" id="LastName" placeholder="LastName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="engName">英语名</label>
+                <input type="text" class="form-control" id="engName" placeholder="English Name">
+            </div>
+
+            <div class="form-group">
+                <label for="height">身高</label>
+                <input type="text" class="form-control" id="height" placeholder="Height">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">体重</label>
+                <input type="text" class="form-control" id="weight" placeholder="Weight">
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <label for="constellation">星座</label>
+                    <select id="constellation" class="form-control">
+                        <option>白羊(03.21~04.20)</option>
+                        <option>金牛(04.21~05.20)</option>
+                        <option>双子(05.21~06.21)</option>
+                        <option>巨蟹(06.22~07.22)</option>
+                        <option>狮子(07.23~08.22)</option>
+                        <option>处女(08.23~09.22)</option>
+                        <option>天秤(09.23~10.22)</option>
+                        <option>天蝎(10.23~11.21)</option>
+                        <option>射手(11.22~12.21)</option>
+                        <option>摩羯(12.22~01.19)</option>
+                        <option>水瓶(01.20~02.18)</option>
+                        <option>双鱼(02.19~03.20)</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="bloodType">血型</label>
+                        <select id="bloodType" class="form-control">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>O</option>
+                            <option>AB</option>
+                            <option>不知道呢╮(╯▽╰)╭</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">下一步</button>
+        </form>
+        <br>
+    </div>
+
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; ACE婚介所 2018 <a href="https://github.com/Louis-He">@叮咚的雨</a> <br>提交的数据将不会被公布</p>
+    </footer>
+</div>
+</body>
+</html>
